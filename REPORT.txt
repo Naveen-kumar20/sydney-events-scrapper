@@ -1,0 +1,17 @@
+Project Summary: Sydney Events Scraper 
+Approach
+•	Web Scraping Implementation: Used Cheerio to extract event data from Sydney-based event website. The script runs automatically every 24 hours to ensure up-to-date information.
+•	Backend Development: Built a Node.js & Express.js server to store and serve event data, saving events data in events.json and user emails in a MongoDB database for easy retrieval.
+•	Frontend Development: Developed a .EJS & Bootstrap-based UI to display events in a structured and user-friendly format.
+•	User Interaction: Implemented a ‘GET TICKETS’ button that collects the user’s email before redirecting them to the original event ticketing site.
+
+Challenges Faced
+•	New learning: Since I had never done data scraping before, it was a completely new challenge for me. I had to rely on multiple searches and resources to understand how data scraping works and to implement it effectively.
+•	Website Structure: I analysed multiple websites for data scraping, but their complex HTML structures made it challenging to extract information. Understanding the structure of each website took significant time and effort before implementing an effective scraping strategy.
+
+Improvements & Future Enhancements
+•	Optimized Scraping: Implement techniques like rotating user agents and proxies to avoid detection and improve scraping efficiency.
+•	Enhanced Data Handling: Implement duplicate detection and improved data validation before storing.
+•	Better UI/UX: Improve the event listing interface with filters, search functionality, and a direct ticketing interface with collaboration of website.
+•	More Data Sources: Expand the scraper to include additional event websites to provide a wider variety of events.
+
