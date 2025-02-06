@@ -1,0 +1,28 @@
+#navbar{
+    background-image: url('./image/eventBackground.jpg');
+    background-position: bottom;
+    transition-duration: 1s;
+&:hover{
+    background-position: top;
+}
+}
+#main-page-cover-section{
+    color: whitesmoke;
+    border-radius: 20px;
+    height: 80vh;
+    padding: 1.5rem;
+    background-image: url('./image/eventBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    transition-duration: 1s;
+
+&:hover{
+    background-position: top;
+}
+}
+
+@media (max-width: 867px) {
+    #lottie-animation{
+        display: none;
+    }
+}

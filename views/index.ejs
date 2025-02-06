@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sydney-Events-Scraping</title>
+    <!-- fontAwesome -->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+    <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- my custom css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: #002D40">
+    <header class="mx-3">
+        <nav>
+            <h3 id="navbar" class="blockquote text-white py-3  my-2 rounded-pill" style="text-align: center;">Louder World</h3>
+        </nav>
+        <section id="main-page-cover-section">
+            <section class="d-flex justify-content-start align-item-center" style="height: 100%;">
+                <div style="height: auto;">
+                    <h2 style="font-size: 2.5rem;">Louder World</h2>
+                    <h3 style="font-size: 1.5rem;">Your one stop solution for events</h3>
+                    <h1 style="font-size: 3.5rem;">Make your Sydney visit memorable</h1>
+                    <h1 style="font-size: 3.5rem;">with <span style="color: #7AB7C7;">events</span></h1>
+                </div>
+            </section>
+        </section>
+    </header>
+    
+    <div class="row mx-auto">
+
+        <% for(let eventItem of events){%>
+            <div class="col-12 col-lg-3 col-md-4 col-sm-6 mt-3">
+                <div class="blog-card mx-auto" style="max-width: 350px; height: 100%">
+                    <div class="card shadow" style="min-height:100%">
+                        <div>
+                        <img src="<%=eventItem.image%>" style="object-fit: cover; width: 100%; height: 200px;" class="card-img-top rounded-top" alt="Themesberg office"/>
+                        </div>
+                        <div class="card-body">
+                            <h2 class="h5">
+                                <span><%=eventItem.title%></span>
+                            </h2>
+                            <i class="d-block mb-2"><%=eventItem.date%></i>
+                            <div class="d-flex justify-content-start align-item-center">
+                                <i class="fa-solid fa-location-dot my-auto me-2"></i>
+                                <p class="card-text my-2"><%=eventItem.place%></p>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0 px-0 py-0">
+                            <div class="d-grid">
+                                <form action="/get-ticket" method="POST">
+                                    <input type="hidden" name="link" value="<%=eventItem.link%>">
+                                        <button class="btn btn-sm text-white rounded-0 rounded-bottom w-100" style="background-color: #0D1724;">
+                                            <i class="fa-regular fa-ticket" style="margin-right: 5px;"></i> GET TICKETS
+                                        </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>  
+    </div>
+
+
+    
+
+
+    <!-- bootstrap JS cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- customJS -->
+    <script src="./script.js"></script>
+</body>
+</html>
