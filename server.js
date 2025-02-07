@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose')
@@ -16,8 +18,9 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); 
 
+const mongoDB_url = process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/sydney-events';
 
-mongoose.connect('mongodb://127.0.0.1:27017/sydney-events')
+mongoose.connect(mongoDB_url)
 .then(() => console.log('Connected to Database'))
 .catch(err => console.error('DB not connected', err));
 
