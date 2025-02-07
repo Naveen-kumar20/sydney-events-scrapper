@@ -9,7 +9,7 @@ const cheerio = require('cheerio');
 const fs = require('fs');
 const Email = require('./models/Email');
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
