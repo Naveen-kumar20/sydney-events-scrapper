@@ -25,4 +25,7 @@
     #lottie-animation{
         display: none;
     }
+    #email-div{
+        padding: 25px !important
+    }
 }
